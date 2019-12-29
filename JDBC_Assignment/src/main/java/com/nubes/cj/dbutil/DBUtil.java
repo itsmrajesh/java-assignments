@@ -1,4 +1,4 @@
-package com.noobs.cj.dbutil;
+package com.nubes.cj.dbutil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

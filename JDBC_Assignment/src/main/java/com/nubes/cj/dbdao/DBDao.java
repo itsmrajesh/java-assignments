@@ -1,8 +1,8 @@
-package com.noobs.cj.dbdao;
+package com.nubes.cj.dbdao;
 
 import java.util.List;
 
-import com.noobs.cj.domain.Product;
+import com.nubes.cj.domain.Product;
 
 public interface DBDao {
 	
@@ -16,7 +16,4 @@ public interface DBDao {
 	
 	List<Product> viewAllProducts();
 	
-	int deleteAllProducts();
-	
-	int insertAllProducts(List<Product> products);
 }

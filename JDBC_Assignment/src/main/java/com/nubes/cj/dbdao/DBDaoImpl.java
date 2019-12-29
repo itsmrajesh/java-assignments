@@ -1,4 +1,4 @@
-package com.noobs.cj.dbdao;
+package com.nubes.cj.dbdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.noobs.cj.dbutil.DBUtil;
-import com.noobs.cj.domain.Product;
+import com.nubes.cj.dbutil.DBUtil;
+import com.nubes.cj.domain.Product;
 
 public class DBDaoImpl implements DBDao {
 
@@ -133,8 +133,7 @@ public class DBDaoImpl implements DBDao {
 	}
 
 
-	@Override
-	public int deleteAllProducts() {
+	protected int deleteAllProducts() {
 		con=dbUtil.getConnection();
 		try {
 			st=con.createStatement();
@@ -149,8 +148,7 @@ public class DBDaoImpl implements DBDao {
 		return 0;
 	}
 
-	@Override
-	public int insertAllProducts(List<Product> products) {
+	protected int insertAllProducts(List<Product> products) {
 		return 0;
 	}
 

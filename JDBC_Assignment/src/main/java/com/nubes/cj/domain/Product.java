@@ -1,4 +1,4 @@
-package com.noobs.cj.domain;
+package com.nubes.cj.domain;
 
 public class Product {
 

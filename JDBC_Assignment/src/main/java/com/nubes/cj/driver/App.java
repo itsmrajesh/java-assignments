@@ -1,12 +1,11 @@
-package com.noobs.cj.driver;
+package com.nubes.cj.driver;
 
 import java.util.List;
 import java.util.Scanner;
 
-import com.noobs.cj.dbdao.DBDao;
-import com.noobs.cj.dbdao.DBDaoImpl;
-import com.noobs.cj.dbutil.DBUtil;
-import com.noobs.cj.domain.Product;
+import com.nubes.cj.dbdao.DBDao;
+import com.nubes.cj.dbdao.DBDaoImpl;
+import com.nubes.cj.domain.Product;
 
 public class App {
 	private static DBDao dbDao = new DBDaoImpl();
@@ -14,8 +13,7 @@ public class App {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
-			System.out.println(
-					"1.Add Product 2.Delete by ID 3.Update by iD 4.Search by ID 5.View All Products 6.Delete All Products");
+			System.out.println("1.Add Product 2.Delete by ID 3.Update by iD 4.Search by ID 5.View All Products ");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1:
@@ -42,12 +40,8 @@ public class App {
 					System.out.println(p);
 				}
 				break;
-			case 6:
-				dbDao.deleteAllProducts();
-				break;
 			default:
 				System.out.println("Select from 1-5 only");
-				dbDao.deleteAllProducts();
 				break;
 			}
 		}
