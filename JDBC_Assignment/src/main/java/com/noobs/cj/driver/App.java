@@ -42,7 +42,7 @@ public class App {
 				break;
 
 			default:
-				System.out.println("Select from 1-5 only ");
+				System.out.println("Select from 1-5 only");
 				break;
 			}
 		}
