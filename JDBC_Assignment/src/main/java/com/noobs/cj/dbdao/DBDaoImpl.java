@@ -18,11 +18,12 @@ public class DBDaoImpl implements DBDao {
 	private PreparedStatement pst;
 	private Statement st;
 	private ResultSet rs;
-	private final String addQuery = "INSERT INTO PRODUCT (PNAME,PRICE,DISCOUNT) VALUES (?,?,?)";
-	private final String deleteQuery = "DELETE FROM PRODUCT WHERE PID = ?";
-	private final String updateQuery = "UPDATE PRODUCT SET PNAME = ? , PRICE = ? , DISCOUNT = ? WHERE PID = ?";
-	private final String searchQuery = "SELECT * FROM PRODUCT WHERE PID = ?";
-	private final String getAllProductsQuery = "SELECT * FROM PRODUCT";
+	private final String addQuery = "INSERT INTO PRODUCTS (PNAME,PRICE,DISCOUNT) VALUES (?,?,?)";
+	private final String deleteQuery = "DELETE FROM PRODUCTS WHERE PID = ?";
+	private final String updateQuery = "UPDATE PRODUCTS SET PNAME = ? , PRICE = ? , DISCOUNT = ? WHERE PID = ?";
+	private final String searchQuery = "SELECT * FROM PRODUCTS WHERE PID = ?";
+	private final String getAllProductsQuery = "SELECT * FROM PRODUCTS";
+	private final String deleteAllProductsQuery="DELETE FROM PRODUCTS";
 
 	@Override
 	public int addProduct(Product product) {
@@ -44,7 +45,7 @@ public class DBDaoImpl implements DBDao {
 	}
 
 	private int getCount() {
-		String countQuery = "SELECT COUNT(PID) FROM PRODUCT";
+		String countQuery = "SELECT COUNT(PID) FROM PRODUCTs";
 		con = dbUtil.getConnection();
 		try {
 			st = con.createStatement();
@@ -131,15 +132,25 @@ public class DBDaoImpl implements DBDao {
 		return productList;
 	}
 
+
 	@Override
 	public int deleteAllProducts() {
-		// TODO Auto-generated method stub
+		con=dbUtil.getConnection();
+		try {
+			st=con.createStatement();
+			int rowsChanged = st.executeUpdate(deleteAllProductsQuery);
+			if (rowsChanged > 0) {
+				System.out.println(rowsChanged+" products deleted");
+				return rowsChanged;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return 0;
 	}
 
 	@Override
-	public int allAllProducts() {
-		// TODO Auto-generated method stub
+	public int insertAllProducts(List<Product> products) {
 		return 0;
 	}
 

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.noobs.cj.dbdao.DBDao;
 import com.noobs.cj.dbdao.DBDaoImpl;
+import com.noobs.cj.dbutil.DBUtil;
 import com.noobs.cj.domain.Product;
 
 public class App {
@@ -43,6 +44,7 @@ public class App {
 
 			default:
 				System.out.println("Select from 1-5 only");
+				dbDao.deleteAllProducts();
 				break;
 			}
 		}

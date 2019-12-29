@@ -18,5 +18,5 @@ public interface DBDao {
 	
 	int deleteAllProducts();
 	
-	int allAllProducts();
+	int insertAllProducts(List<Product> products);
 }
